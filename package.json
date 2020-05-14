@@ -1,0 +1,9 @@
+{
+  "name": "angelitosConPatitas",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "express": "4.13.4",
+    "mysql": "2.10.2"
+  }
+}
