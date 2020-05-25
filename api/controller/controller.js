@@ -30,6 +30,26 @@ module.exports = class Controller {
 
 
     /**
+     * Metodo que elimina el producto
+     * @param {Object} req 
+     * @param {Object} res 
+     */
+    async deleteProduct(req, res) {
+        const response = await new Service().deleteProduct(req);
+        new Controller().controller(req, res, response);
+    }
+
+
+    /**
+     * Metodo que inserta un producto
+     * @param {Object} req 
+     * @param {Object} res 
+     */
+    async insertProduct(req, res) {
+        const response = await new Service().insertProduct(req);
+        new Controller().controller(req, res, response);
+    }
+    /**
      *  Metodo que retorna la respuesta l cliente
      * @param { Object containing information about the HTTP request that raised the event } req 
      * @param {  Object containing information to send back the desired HTTP response } res 

@@ -8,6 +8,7 @@ const controller = new Controller();
 module.exports = express
   .Router()
   .get('/total', controller.getTotalProducts)
-  .get('/:nombreProducto', controller.getProductsName);
-  //.post('', controller.formatAmt)
-  //.put('', controller.converCurrency);
+  .get('/:nombreProducto', controller.getProductsName)
+  .delete('/:idProducto', controller.deleteProduct)
+  .post('', controller.insertProduct);
+  

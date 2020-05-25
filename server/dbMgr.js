@@ -51,5 +51,23 @@ async function excuteSelectProductName(nombreProducto) {
   }
 }
 
+async function excuteDeleteProduct(idProducto) {
+  try {
+    const rows = await query('DELETE FROM products WHERE id LIKE ?', [idProducto]);
+    return rows;
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-module.exports = { excuteSelectTotal, excuteSelectProductName }
+async function excuteInsertProduct(nombreProducto, descripcion, precio, cantidad, fecha_vencimiento) {
+  try {
+    const sql = "INSERT INTO products(nombreProducto, descripcion, precio, cantidad, fecha_vencimiento) VALUES (" + "'" + nombreProducto + "'," + "'" + descripcion + "'," + precio + "," + cantidad + "," + "'" + fecha_vencimiento + "')";
+    const rows = await query(sql);
+    return rows;
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+module.exports = { excuteSelectTotal, excuteSelectProductName, excuteDeleteProduct, excuteInsertProduct }
